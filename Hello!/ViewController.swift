@@ -21,29 +21,6 @@ class ViewController: UIViewController {
         text_label.text = ""
         prev_num_label.text = ""
         calc_label.text = ""
-        
-        var x = 6
-        var y = 60
-        
-        //var z:String = 6.0 as! String
-        //var z:Int = "hello".toInt()!
-        
-        var z = x-y
-        
-        var i = 0;
-        /*
-        for i=0; i<10; i+=1 {
-            //println(i)
-        }
-        
-        i = 0
-        while i<10 {
-            i++
-            println(i)
-        }
-        */
-        
-        //text_label.text = String(z)
     }
 
     override func didReceiveMemoryWarning() {
