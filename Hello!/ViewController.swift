@@ -16,7 +16,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         text_label.text = ""
         prev_num_label.text = ""
@@ -25,73 +24,19 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func one_pushed(sender: AnyObject) {
-        //text_label.text = text_label.text + String(1)
-        text_label.text! += "1"
+    @IBAction func num_button_pushed(sender: UIButton) {
+        text_label.text! += sender.titleLabel!.text!
     }
     
-    @IBAction func two_pushed(sender: AnyObject) {
-        text_label.text! += "2"
-    }
-    
-    @IBAction func three_pushed(sender: AnyObject) {
-        text_label.text! += "3"
-    }
-    
-    @IBAction func four_pushed(sender: AnyObject) {
-        text_label.text! += "4"
-    }
-    
-    @IBAction func five_pushed(sender: AnyObject) {
-        text_label.text! += "5"
-    }
-    
-    @IBAction func six_pushed(sender: AnyObject) {
-        text_label.text! += "6"
-    }
-    
-    @IBAction func seven_pushed(sender: AnyObject) {
-        text_label.text! += "7"
-    }
-    
-    @IBAction func eight_pushed(sender: AnyObject) {
-        text_label.text! += "8"
-    }
-    
-    @IBAction func nine_pushed(sender: AnyObject) {
-        text_label.text! += "9"
-    }
-    
-    @IBAction func zero_pushed(sender: AnyObject) {
-        text_label.text! += "0"
-    }
-
-    @IBAction func plus_pushed(sender: AnyObject) {
-        calc_label.text = "+"
-        prev_num_label.text = text_label.text
-        text_label.text = ""
-    }
-    @IBAction func minus_pushed(sender: AnyObject) {
-        calc_label.text = "-"
-        prev_num_label.text = text_label.text
-        text_label.text = ""
-    }
-    @IBAction func multiply_pushed(sender: AnyObject) {
-        calc_label.text = "*"
-        prev_num_label.text = text_label.text
-        text_label.text = ""
-    }
-    @IBAction func by_pushed(sender: AnyObject) {
-        calc_label.text = "/"
+    @IBAction func calc_sign_pushed(sender: UIButton) {
+        calc_label.text = sender.titleLabel!.text!
         prev_num_label.text = text_label.text
         text_label.text = ""
     }
     
     @IBAction func equal_pushed(sender: AnyObject) {
-        
         if prev_num_label.text!.toInt() != nil && text_label.text!.toInt() != nil {
             if calc_label.text == "+" {
                 text_label.text = String(prev_num_label.text!.toInt()! + text_label.text!.toInt()!)
@@ -103,9 +48,5 @@ class ViewController: UIViewController {
                 text_label.text = String(prev_num_label.text!.toInt()! / text_label.text!.toInt()!)
             }
         }
-        
-        
     }
-    
 }
-
