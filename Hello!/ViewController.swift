@@ -89,17 +89,19 @@ class ViewController: UIViewController {
         prev_num_label.text = text_label.text
         text_label.text = ""
     }
-
+    
     @IBAction func equal_pushed(sender: AnyObject) {
         
-        if calc_label.text == "+" {
-            text_label.text = String(prev_num_label.text!.toInt()! + text_label.text!.toInt()!)
-        }else if calc_label.text == "-" {
-            text_label.text = String(prev_num_label.text!.toInt()! - text_label.text!.toInt()!)
-        }else if calc_label.text == "*" {
-            text_label.text = String(prev_num_label.text!.toInt()! * text_label.text!.toInt()!)
-        }else if calc_label.text == "/" {
-            text_label.text = String(prev_num_label.text!.toInt()! / text_label.text!.toInt()!)
+        if prev_num_label.text!.toInt() != nil && text_label.text!.toInt() != nil {
+            if calc_label.text == "+" {
+                text_label.text = String(prev_num_label.text!.toInt()! + text_label.text!.toInt()!)
+            }else if calc_label.text == "-" {
+                text_label.text = String(prev_num_label.text!.toInt()! - text_label.text!.toInt()!)
+            }else if calc_label.text == "*" {
+                text_label.text = String(prev_num_label.text!.toInt()! * text_label.text!.toInt()!)
+            }else if calc_label.text == "/" {
+                text_label.text = String(prev_num_label.text!.toInt()! / text_label.text!.toInt()!)
+            }
         }
         
         
